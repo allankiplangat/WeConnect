@@ -203,7 +203,7 @@ button {
 	Profile card
 ========================================= */
 
-.card {
+.card-profile {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 500px;
     margin: auto;
@@ -264,66 +264,123 @@ line-height: 1.3125rem;
 }
 
 .comment-wrap {
-margin-bottom: 1.25rem;
-display: table;
-width: 100%;
-min-height: 5.3125rem;
+	margin-bottom: 1.25rem;
+	display: table;
+	width: 100%;
+	min-height: 5.3125rem;
 }
 
 .photo {
-padding-top: 0.625rem;
-display: table-cell;
-width: 3.5rem;
+	padding-top: 0.625rem;
+	display: table-cell;
+	width: 3.5rem;
 }
 .photo .avatar {
-height: 2.25rem;
-width: 2.25rem;
-border-radius: 50%;
-background-size: contain;
+	height: 2.25rem;
+	width: 2.25rem;
+	border-radius: 50%;
+	background-size: contain;
 }
 
 .comment-block {
-padding: 1rem;
-background-color: #fff;
-display: table-cell;
-vertical-align: top;
-border-radius: 0.1875rem;
-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+	padding: 1rem;
+	background-color: #fff;
+	display: table-cell;
+	vertical-align: top;
+	border-radius: 0.1875rem;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
 }
 .comment-block textarea {
-width: 100%;
-resize: none;
+	width: 100%;
+	resize: none;
 }
 
 .comment-text {
-margin-bottom: 1.25rem;
+	margin-bottom: 1.25rem;
 }
 
 .bottom-comment {
-color: #acb4c2;
-font-size: 0.875rem;
+	color: #acb4c2;
+	font-size: 0.875rem;
 }
 
 .comment-date {
-float: left;
+	float: left;
 }
 
 .comment-actions {
-float: right;
+	float: right;
 }
 .comment-actions li {
-display: inline;
-margin: -2px;
-cursor: pointer;
+	display: inline;
+	margin: -2px;
+	cursor: pointer;
 }
 .comment-actions li.complain {
-padding-right: 0.75rem;
-border-right: 1px solid #e1e5eb;
+	padding-right: 0.75rem;
+	border-right: 1px solid #e1e5eb;
 }
 .comment-actions li.reply {
-padding-left: 0.75rem;
-padding-right: 0.125rem;
+	padding-left: 0.75rem;
+	padding-right: 0.125rem;
 }
 .comment-actions li:hover {
-color: #0095ff;
+	color: #0095ff;
 }
+
+
+/* ======================================
+	Businesses Details 
+========================================= */
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+
+.card {
+	background: white;
+	margin-bottom: 2em;	
+}
+
+.card a {
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: bold;
+}
+
+.card-content p {
+	font-size: 80%;
+}
+
+/* Flexbox stuff */
+
+.cards {
+   padding-top: 90px;	
+   padding-left: 40px;
+   padding-right: 40px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.card {
+	flex: 0 1 24%;
+}
+

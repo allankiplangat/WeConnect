@@ -1,0 +1,199 @@
+/* ======================================
+	Base Element Styles
+========================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+}
+
+a {
+	color: #093a58;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* --- Navigation --- */
+
+.name {
+	font-size: 1.25em;
+	margin: 0;
+}
+
+.name,
+.main-nav li {
+	background: #fff;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	border-radius: 2px;
+}
+
+.name a,
+.main-nav a {
+	padding: 10px 15px;
+	display: block;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #3acec2;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+	text-align: center;
+	background: #fff;
+}
+
+.main-footer {
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+	padding: 2em 0;
+	background: #d9e4ea;
+	margin-top: 30px;
+}
+
+.main-footer {
+	text-align: center;
+}
+
+/* ======================================
+	Media Query
+========================================= */
+
+@media (min-width: 769px) {
+
+	body {
+		padding-top: 60px;
+	}
+
+	.main-header {
+		position: fixed;
+		box-shadow: 0 1px 4px rgba(0,0,0,.4);
+		width: 100%;
+		top: 0;
+		z-index: 1000;
+	}
+
+	.container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.primary,
+	.secondary {
+		width: 50%;
+	}
+
+	.name,
+	.col {
+		float: left;
+	}
+
+	.main-nav {
+		float: right;
+	}
+
+	.main-nav li {
+		display: inline-block;
+		margin-left: 15px;
+	}
+
+
+
+	.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@media (min-width: 1025px) {
+	
+	.container {
+		width: 80%;
+		max-width: 1150px;
+	}
+
+	.primary {
+		width: 40%;
+	}
+
+	.secondary,
+	.third {
+		width: 30%;
+	}
+
+}
+
+.form-section{
+    padding-top: 50px;
+}
+
+/* ======================================
+	Form
+========================================= */
+
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}

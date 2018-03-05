@@ -3,7 +3,7 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
-    SECRET_KEY = "allan2327"
+    SECRET_KEY = "allan2327,."
 
 class ProductionConfig(Config):
     DEBUG = False

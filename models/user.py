@@ -1,4 +1,5 @@
 from werkzeug.security import generate_password_hash, check_password_hash
+from models.data import DataStore
 class User:
     
 
@@ -14,6 +15,11 @@ class User:
 
     def check_password(self, password):
         return check_password_hash(self.password, password)
+
+    def add_user(self, data):
+        data['password']=self.set_password(data['password'])
+        
+        DataStore().append_user(data)
 
 
     def authenticate(self, username, password):

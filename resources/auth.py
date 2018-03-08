@@ -5,6 +5,8 @@ from flask_restful import abort, Resource
 import jwt
 from models.user import User
 from config import Config
+from models.data import DataStore
+
 
 
 def authenticate_token(request):
@@ -23,7 +25,7 @@ def authenticate_token(request):
         abort(401, message="Session expired, please login again")
     
     #Query the payload user = 
-    return user
+    # return user
 
 
 class Register(Resource):
@@ -44,15 +46,17 @@ class Register(Resource):
             password = data["password"]
         except Exception:
             return {"error": "username or password is missing"}, 400
-        #search user by username user = 
-        if user:
-            return {"message": "{} already exists".format(user.username)}, 400
-        else:
-            new_user = User(username, password)
-            
-            # Add user
-            return {"message": "Successfully registered {0}".format(username)}
 
+        for data in DataStore.users:
+            if data["username"] == username:
+                return {"message": "{} already exists".format(data)}, 400
+            else:
+                recieved_data = {
+                    "username" :username,
+                    "password" :password
+                }
+                DataStore().append_user(recieved_data)
+                return {"message": "Successfully registered {0}".format(username)}
 
 class Login(Resource):
     """Class that creates endpoints for login"""
@@ -67,7 +71,9 @@ class Login(Resource):
             password = data["password"]
         except Exception:
             return {"error": "username or password is missing"}, 400
-        #  search by username
+
+        for data in DataStore.users:
+            
         if not user:
             return {"error": "{0} is not registered".format(username)}, 400
         elif user and not user.check_password(password=bytes(str(password), 'utf-8')):

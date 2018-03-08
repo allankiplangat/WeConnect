@@ -12,5 +12,3 @@ class BaseTestCase(TestCase):
     def setUp(self):
         self.client =self.app.test_client()
         user = User(1, "Allan", "allan2327")
-
-

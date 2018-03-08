@@ -3,10 +3,11 @@
 from .user import User
 
 users = [
-    User(1, 'allan', '2327')
+    
 ]
-
-username_mapping = {u.username: u for u in users}
+#Retrieve users by username
+username_mapping = {u.username: u for u in users} 
+#Retrieve users by id
 userid_mapping = {u.id: u for u in users}
 
 def authenticate(username, password):
@@ -17,3 +18,5 @@ def authenticate(username, password):
 def identity(payload):
     user_id = payload[identity]
     return userid_mapping.get(user_id, None)
+
+def save(da)

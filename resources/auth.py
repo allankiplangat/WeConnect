@@ -22,7 +22,7 @@ def authenticate_token(request):
     except jwt.ExpiredSignatureError:
         abort(401, message="Session expired, please login again")
     
-    user = #Query the payload
+    #Query the payload user = 
     return user
 
 

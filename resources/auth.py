@@ -44,7 +44,7 @@ class Register(Resource):
             password = data["password"]
         except Exception:
             return {"error": "username or password is missing"}, 400
-        user = #search user by username
+        #search user by username user = 
         if user:
             return {"message": "{} already exists".format(user.username)}, 400
         else:

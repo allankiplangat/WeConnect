@@ -1,5 +1,6 @@
 
 class BusinessList(object):
+    """This class adds a business to the data structure"""
     def __init__(self):
         self.businesses_details = []
 

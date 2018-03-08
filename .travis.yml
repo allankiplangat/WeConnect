@@ -1,16 +1,16 @@
 language: python
 python:
   - "3.6"
-
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
-
-
-# command to run tests.py
+   - pip install -r requirements.txt
+   - pip install coveralls
+# command to run tests
 script:
-  - python -m unittest -v
+  nosetests --with-coverage
+
+after_success:
   - coveralls
 
-after_sucess:
-  - "coveralls"
+notifications:
+  email: false

@@ -11,18 +11,15 @@ class AuthTestCase(BaseTestCase):
 
         response = self.client.post('/api/v1/auth/register',
                                     data=data,
-                                    content_type='application/json',
-                                    headers={}
+                                    headers=dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"],
-                         "Invalid format. " +
-                         "Only username and password are allowed")
+                         "Invalid format Only username and password are allowed")
 
     def test_registration_with_no_data(self):
         response = self.client.post('/api/v1/auth/register',
                                     data=json.dumps({}),
-                                    content_type='application/json',
-                                    headers={}
+                                    headers=dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"],
                          "Please enter registration data")
@@ -32,7 +29,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/register',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"],
                          "username or password is missing")
@@ -43,7 +40,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/register',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["message"], "Alanos already exists")
 
@@ -53,7 +50,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/register',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["message"],
                          "Successfully registered Allan")
@@ -64,7 +61,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/register',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"], "Invalid password")
 
@@ -73,7 +70,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/login',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"],
                          "username or password is missing")
@@ -81,7 +78,7 @@ class AuthTestCase(BaseTestCase):
     def test_login_with_no_data(self):
         response = self.client.post('/api/v1/auth/login',
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["error"],
                          "Login data not found")
@@ -93,7 +90,7 @@ class AuthTestCase(BaseTestCase):
         response = self.client.post('/api/v1/auth/login',
                                     data=data,
                                     content_type='application/json',
-                                    headers={}
+                                    headers= dict(content_type='application/json'),
                                     )
         self.assertEqual(response.json["message"], "Login successful")
 

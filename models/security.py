@@ -19,4 +19,6 @@ def identity(payload):
     user_id = payload[identity]
     return userid_mapping.get(user_id, None)
 
-def save(da)
+def save_data(username, password):
+    users.append({"username": username,
+                 "password": password})

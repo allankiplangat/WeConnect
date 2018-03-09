@@ -1,4 +1,3 @@
-
 from flask_testing import TestCase
 from models.user import User
 from app import app
